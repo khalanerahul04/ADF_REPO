@@ -1,0 +1,13 @@
+{
+	"name": "AzureSqldb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_db",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

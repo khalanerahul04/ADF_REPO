@@ -1,0 +1,21 @@
+{
+	"name": "json_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_gen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "file.json",
+				"folderPath": "api1",
+				"fileSystem": "sink"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

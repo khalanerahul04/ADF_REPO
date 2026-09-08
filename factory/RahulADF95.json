@@ -1,0 +1,15 @@
+{
+	"name": "RahulADF95",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "754cd69a-6a98-473d-9b97-a2e9bd7f95c5",
+		"tenantId": "f2b2a460-5eef-4b3b-a78c-95222eadbac5"
+	}
+}
