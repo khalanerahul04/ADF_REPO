@@ -24,7 +24,10 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "ds_router",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "@pipeline().parameters.file"
+						}
 					},
 					"fieldList": [
 						"childItems"
