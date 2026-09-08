@@ -1,0 +1,153 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "RahulADF95"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"adls_gen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_gen2'"
+		},
+		"ds_jsonAPI_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ds_jsonAPI'"
+		},
+		"sql_db_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sql_db'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"Http1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"adls_gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"ds_jsonAPI_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"ls_rest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"ls_restapi_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"sql_db_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserver--adf.database.windows.net"
+		},
+		"sql_db_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlrahul"
+		},
+		"sql_db_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "zadmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "RahulADF95_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"adls_gen2_accountKey": {
+						"value": "[parameters('adls_gen2_accountKey')]"
+					},
+					"ds_jsonAPI_accountKey": {
+						"value": "[parameters('ds_jsonAPI_accountKey')]"
+					},
+					"sql_db_password": {
+						"value": "[parameters('sql_db_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"Http1_properties_typeProperties_url": {
+						"value": "[parameters('Http1_properties_typeProperties_url')]"
+					},
+					"adls_gen2_properties_typeProperties_url": {
+						"value": "[parameters('adls_gen2_properties_typeProperties_url')]"
+					},
+					"ds_jsonAPI_properties_typeProperties_url": {
+						"value": "[parameters('ds_jsonAPI_properties_typeProperties_url')]"
+					},
+					"ls_rest_properties_typeProperties_url": {
+						"value": "[parameters('ls_rest_properties_typeProperties_url')]"
+					},
+					"ls_restapi_properties_typeProperties_url": {
+						"value": "[parameters('ls_restapi_properties_typeProperties_url')]"
+					},
+					"sql_db_properties_typeProperties_server": {
+						"value": "[parameters('sql_db_properties_typeProperties_server')]"
+					},
+					"sql_db_properties_typeProperties_database": {
+						"value": "[parameters('sql_db_properties_typeProperties_database')]"
+					},
+					"sql_db_properties_typeProperties_userName": {
+						"value": "[parameters('sql_db_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "RahulADF95_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'RahulADF95_ArmTemplate_0')]"
+			]
+		}
+	]
+}

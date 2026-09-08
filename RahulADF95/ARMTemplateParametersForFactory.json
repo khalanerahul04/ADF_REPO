@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "RahulADF95"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"adls_gen2_accountKey": {
+			"value": ""
+		},
+		"ds_jsonAPI_accountKey": {
+			"value": ""
+		},
+		"sql_db_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"Http1_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"adls_gen2_properties_typeProperties_url": {
+			"value": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"ds_jsonAPI_properties_typeProperties_url": {
+			"value": "https://rahuldata95.dfs.core.windows.net/"
+		},
+		"ls_rest_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"ls_restapi_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"sql_db_properties_typeProperties_server": {
+			"value": "sqlserver--adf.database.windows.net"
+		},
+		"sql_db_properties_typeProperties_database": {
+			"value": "sqlrahul"
+		},
+		"sql_db_properties_typeProperties_userName": {
+			"value": "zadmin"
+		}
+	}
+}
