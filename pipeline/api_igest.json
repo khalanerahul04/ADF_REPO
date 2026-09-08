@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "api_copy1",
+				"name": "api_ingest",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

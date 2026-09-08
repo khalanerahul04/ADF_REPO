@@ -1,0 +1,17 @@
+{
+	"name": "testgit",
+	"properties": {
+		"activities": [
+			{
+				"name": "test",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 5
+				}
+			}
+		],
+		"annotations": []
+	}
+}
